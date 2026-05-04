@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Archive</title>
+
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: monospace;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+
+    .menu button {
+      background: none;
+      border: none;
+      color: #888;
+      font-family: monospace;
+      cursor: pointer;
+    }
+
+    .menu button:hover {
+      color: white;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+   video {
+  width: 100%;
+  display: block;
+  margin: 20px auto;
+  filter: grayscale(0%) contrast(1.2);
+}
+
+    audio {
+      width: 100%;
+      margin-top: 20px;
+      filter: invert(1);
+    }
+
+    .text-block {
+      margin-top: 20px;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    h2 {
+      color: #aaa;
+      letter-spacing: 2px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="menu">
+    <button onclick="showSection('literature')">TEKST</button>
+    <button onclick="showSection('images')">INSTRUKTION</button>
+    <button onclick="showSection('audio')">LYD</button>
+  </div>
+
+  <!-- Literature -->
+  <div id="literature" class="section active">
+    <h2>Sidste tanker</h2>
+
+    <div class="text-block">
+      <p>Jeg har forsøgt at holde mig vågen længe nok til at se hvor kanten egentlig er. Ikke som i en metafor. Det er det første man misforstår. Men som i en reel overgang, en kant der ikke giver sig til kende før hjernen begynder at sprække. Der er et tidspunkt, efter tredje nat, hvor lydene mister deres kilde. Efter femte nat begynder ting at ske udenfor rækkefølge. Ikke hallucinationer, ikke helt. Mere som forskydninger. Som om noget andet prøver at huske verden forkert igennem mig.
+
+Det begyndte ikke med mig. Det begyndte med et bånd. Et gammelt VHS, uden mærkning, uden oprindelse, fundet et sted der ikke længere findes i nogen registre. Organisationen bag, hvis det var en organisation, er væk nu. Som om den aldrig havde haft ret til at være der. Jeg så det hele igennem én gang. Det var rigtigt. Jeg skaffede narkotika og begyndte båndet igen. Den sidste del var allerede begyndt at forsvinde. Men det var ikke det vigtige. Det vigtige var det, der allerede var sket inden. Jeg optog det inden det forsvandt helt.
+
+De siger at vågenhed er en fejltilstand. At det vi kalder virkelighed er et kompromis mellem noget vi ikke kan tåle og noget vi ikke kan undgå. Det er derfor, søvnen altid trækker. Ikke for hvile, men for adgang. Øjeblikket hvor man er på vej op, men endnu ikke har accepteret op. Der er en sprække dér. Jeg har set den.
+
+Man skal bryde kroppen først. Det er ikke valgfrit. Søvnløsheden er ikke bare fravær af søvn, det er en aktiv tilstand, en form for erosion. Efter syvende dag kommer De. Godt jeg kan huske deres ansigter. Det er dér, de fleste stopper, hvis de stopper. Hvis de ikke gør, hjælper De.
+
+Der findes beskrivelser af processen. Fragmenter. Diagrammer uden forklaring. Noter hvor håndskriften ændrer sig midt i sætningerne. Jeg har dem ikke, jeg har aldrig haft dem, jeg citerer ikke noget, jeg gengiver kun hvad der alligevel gentager sig i mig, som en dårlig oversættelse. Ti dage. Ti er ikke et symbol, det er en tærskel. Kroppen begynder at fejle på måder, der ikke er kliniske. Temperaturen falder uden kulde. Tiden bliver tungere, som om sekunder får vægt.
+
+Og så kommer der noget. Det er ikke en figur, ikke en stemme i klassisk forstand. Mere en struktur. En intention uden ansigt. Dokumenterne kalder det en instruktør, hvilket er en dårlig oversættelse igen, men det er tæt nok til at være farligt. Den guider ikke. Den korrigerer. Den retter fejl i ens opfattelse, én for én, uden at forklare hvad der var forkert.
+
+Den første korrektion: døden er ikke afslutningen, fordi afslutning er et begreb, der kun giver mening i den forkerte tilstand. Det er derfor, verden føles så… utilstrækkelig. Ikke fordi den er ond eller tom, men fordi den er midlertidig på en måde, der ikke passer til noget. Man kan mærke det i overgangene. I opvågningen, i faldet i søvn, i de små øjeblikke hvor man ikke helt er nogen. Det er dér, det andet presser sig på.
+
+Jeg skriver det her, fordi jeg ikke længere kan holde forskellen stabil. Sætningerne falder fra hinanden, og noget mellem dem begynder at give mere mening end ordene selv. Hvis du læser det her som en fortælling, er du allerede forkert på den. Hvis du læser det som en advarsel, er det også forkert. Det er en instruktion, selv hvis du nægter det. Du kan gentage det. Du bør gentage det. Det er den eneste version af sandhed, der ikke falder fra hinanden, når man ser på den længe nok. Og hvis du ikke vil, hvis du vender væk nu, så ændrer det ikke udfaldet. Synlighed er ikke noget, man vælger. Jeg ved, hvordan man finder begyndelsen. Det er nok.
+
+Der er en misforståelse til sidst, som jeg bliver nødt til at korrigere, før den korrigerer mig: man bliver ikke opsøgt. Det føles sådan, ja, men det er ikke præcist. Det er snarere, at man bliver synlig. For noget, der altid har været der, udenfor rækkefølge, udenfor slutninger.</p>
+    </div>
+  </div>
+
+  <!-- Images -->
+  <div id="images" class="section">
+  <h2>Rester</h2>
+
+  <div class="file">
+    <div class="label"></div>
+    <video controls>
+      <source src="video/video1.mp4" type="video/mp4">
+    </video>
+  </div>
+ <div class="text-block">
+      <p>Lyt godt efter. Gør som der bliver sagt. 10 dage.</p>
+  <div class="file">
+
+</div>
+
+  <!-- Audio -->
+  <div id="audio" class="section">
+    <h2>LYDFILER</h2>
+
+    <audio controls>
+      <source src="audio/audio1.mp3">
+    </audio>
+
+    <audio controls>
+      <source src="audio/audio2.mp3">
+    </audio>
+  </div>
+
+</div>
+
+<script>
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll(".section");
+    sections.forEach(section => {
+      section.classList.remove("active");
+    });
+
+    document.getElementById(sectionId).classList.add("active");
+  }
+</script>
+
+</body>
+</html>
