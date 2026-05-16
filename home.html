@@ -2,9 +2,25 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Info</title>
+  <title>INFO</title>
 
   <style>
+    #fade {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      opacity: 1;
+      pointer-events: none;
+      transition: opacity 0.5s ease-in-out;
+      z-index: 9999;
+    }
+    #fade.fade-out {
+      opacity: 0;
+    }
+
     body {
       background: black;
       color: white;
@@ -46,12 +62,33 @@
       display: block;
     }
 
-   video {
-  width: 100%;
-  display: block;
-  margin: 20px auto;
-  filter: grayscale(0%) contrast(1.2);
-}
+    .audio-entry {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .audio-entry img {
+      max-width: 180px;
+      width: auto;
+      margin: 0;
+    }
+
+    .audio-entry audio {
+      flex: 1;
+      min-width: 220px;
+      width: auto;
+      margin-top: 0;
+    }
+
+    video {
+      width: 100%;
+      display: block;
+      margin: 20px auto;
+      filter: grayscale(0%) contrast(1.2);
+    }
 
     audio {
       width: 100%;
@@ -75,6 +112,15 @@
 </head>
 
 <body>
+
+<script>
+  // Check if user is authenticated, if not redirect to login
+  if (!sessionStorage.getItem("authenticated")) {
+    window.location.href = "index.html";
+  }
+</script>
+
+<div id="fade"></div>
 
 <div class="container">
 
@@ -111,31 +157,42 @@ Der er en misforståelse til sidst, som jeg bliver nødt til at korrigere, før 
 
   <!-- Images -->
   <div id="images" class="section">
-  <h2>Rester</h2>
+    <h2>Rester</h2>
 
-  <div class="file">
-    <div class="label"></div>
-    <video controls>
-      <source src="video/video1.mp4" type="video/mp4">
-    </video>
-  </div>
- <div class="text-block">
+    <div class="file">
+      <div class="label"></div>
+      <video controls>
+        <source src="video/video1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="text-block">
       <p>Lyt godt efter. Gør som der bliver sagt. 10 dage.</p>
-  <div class="file">
-
-</div>
+    </div>
+  </div>
 
   <!-- Audio -->
   <div id="audio" class="section">
     <h2>LYDFILER</h2>
 
-    <audio controls>
-      <source src="audio/audio1.mp3">
-    </audio>
+    <div class="audio-entry">
+      <img src="image/image2.png" alt="Audio illustration" style="display:block;">
+      <audio controls>
+        <source src="audio/audio1.mp3">
+      </audio>
+      <div class="text-block">
+        <p>Umiddelbare optagelser af drømme. Fascinerende. </p>
+      </div>
+    </div>
 
-    <audio controls>
-      <source src="audio/audio2.mp3">
-    </audio>
+    <div class="audio-entry">
+      <img src="image/image3.png" alt="Audio illustration" style="display:block;">
+      <audio controls loop>
+        <source src="audio/audio2.mp3">
+      </audio>
+      <div class="text-block">
+        <p>Afspil under indsovning. Fremmer overgang til hypnopompisk trance.</p>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -149,6 +206,11 @@ Der er en misforståelse til sidst, som jeg bliver nødt til at korrigere, før 
 
     document.getElementById(sectionId).classList.add("active");
   }
+
+  // Fade out on page load
+  window.addEventListener("load", function() {
+    document.getElementById("fade").classList.add("fade-out");
+  });
 </script>
 
 </body>
