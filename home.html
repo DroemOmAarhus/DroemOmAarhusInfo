@@ -204,6 +204,12 @@ Der er en misforståelse til sidst, som jeg bliver nødt til at korrigere, før 
       section.classList.remove("active");
     });
 
+    // Pause all playing media when switching tabs
+    const media = document.querySelectorAll("video, audio");
+    media.forEach(item => {
+      item.pause();
+    });
+
     document.getElementById(sectionId).classList.add("active");
   }
 
