@@ -13,9 +13,23 @@
       background-color: black;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.5s ease-in-out;
+      transition: opacity 3s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     #fade.active {
+      opacity: 1;
+    }
+    #fade-text {
+      color: rgba(255, 255, 255, 0.18);
+      font-size: 3rem;
+      font-family: monospace;
+      letter-spacing: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+    #fade.active #fade-text {
       opacity: 1;
     }
   </style>
@@ -23,7 +37,9 @@
 
 <body style="background:black; color:#dbdbdbf8; font-family:monospace; text-align:center; padding-top:100px;">
 
-  <div id="fade"></div>
+  <div id="fade">
+    <span id="fade-text">JA</span>
+  </div>
 
   <img src="image/image_logo.jpg" alt="Logo" style="width:100px; height:100px; margin-bottom:20px;">
   <h1>ADGANG NØDVENDIG</h1>
@@ -41,10 +57,15 @@
 
       if (input === "DRØMMERJEG?") {
         sessionStorage.setItem("authenticated", "true");
-        document.getElementById("fade").classList.add("active");
+        const fade = document.getElementById("fade");
+        const fadeText = document.getElementById("fade-text");
+        fade.classList.add("active");
+        setTimeout(function() {
+          fadeText.style.opacity = "0";
+        }, 2000);
         setTimeout(function() {
           window.location.href = "home.html";
-        }, 500);
+        }, 3100);
       } else {
         document.getElementById("error").innerText = "FORKERT NØGLE";
       }
