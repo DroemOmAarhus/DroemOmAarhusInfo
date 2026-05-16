@@ -198,13 +198,7 @@ Der er en misforståelse til sidst, som jeg bliver nødt til at korrigere, før 
 </div>
 
 <script>
-  function showSection(sectionId) {
-    const sections = document.querySelectorAll(".section");
-    sections.forEach(section => {
-      section.classList.remove("active");
-    });
-
-    // Pause all playing media when switching tabs
+  function pauseAllMedia() {
     const media = document.querySelectorAll("video, audio");
     media.forEach(item => {
       item.pause();
@@ -213,6 +207,15 @@ Der er en misforståelse til sidst, som jeg bliver nødt til at korrigere, før 
       } catch (e) {
         // Ignore if the browser doesn't allow resetting at this moment
       }
+    });
+  }
+
+  function showSection(sectionId) {
+    pauseAllMedia();
+
+    const sections = document.querySelectorAll(".section");
+    sections.forEach(section => {
+      section.classList.remove("active");
     });
 
     document.getElementById(sectionId).classList.add("active");
