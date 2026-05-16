@@ -208,6 +208,11 @@ Der er en misforståelse til sidst, som jeg bliver nødt til at korrigere, før 
     const media = document.querySelectorAll("video, audio");
     media.forEach(item => {
       item.pause();
+      try {
+        item.currentTime = 0;
+      } catch (e) {
+        // Ignore if the browser doesn't allow resetting at this moment
+      }
     });
 
     document.getElementById(sectionId).classList.add("active");
